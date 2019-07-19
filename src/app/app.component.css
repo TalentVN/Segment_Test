@@ -1,0 +1,41 @@
+.icon-large {
+    font-size: 24px;
+    margin: auto;
+}
+
+.alert-none {
+    height: 36px;
+}
+
+.block-1 {
+    width: 8rem;
+    height: 8rem;
+    text-align: justify;
+    background-color: #e8e9e8;
+    border-right: 5px solid rgb(54, 54, 185);
+}
+
+.block-2 {
+    width: 10rem;
+    height: 8rem;
+    text-align: justify;
+    border: 2px solid gray;
+    border-radius: 6px;
+}
+
+.text-name {
+    height: 3rem;
+}
+
+.text-input {
+    max-height: 2rem;
+    width: 5rem;
+}
+
+.bg-full {
+    background-color: #80b3ff;
+}
+
+.bg-not-full {
+    background-color: #f57e7e;
+}

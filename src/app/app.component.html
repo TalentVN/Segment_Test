@@ -1,0 +1,80 @@
+<div class="card shadow-sm mb-2 bg-white">
+  <div class="card-body">
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+      <strong>Application Segments</strong>
+      <img class="close" src="assets/baseline-contact_support-24px.svg">
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <div class="float-left">
+          <button type="button" class="btn alert-secondary alert-none">
+            <i class="fa fa-exclamation" aria-hidden="true"></i>
+            Please enter
+          </button>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="float-none">
+          <button type="button" class="btn alert-none"
+            [ngClass]="{'btn-warning': fullAssigned === false, 'btn-success': fullAssigned === true}">
+            <i class="fa fa-exclamation icon-large" aria-hidden="true"></i>
+            <b>Warning</b> Pleaase assign 100%
+          </button>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="float-right">
+          <button (click)="filter()" type="button" class="btn btn-outline-primary btn-sm">
+            <i class="fa fa-filter icon-large" aria-hidden="true"></i>
+            Filter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div *ngIf="categories" class="card pl-lg-5 border-0">
+  <div class="card-body">
+    <div class="row">
+      <div *ngFor="let category of categories" class="col-6">
+        <div class="row">
+
+          <div class="card border-0 pr-lg-4" data-toggle="tooltip" data-placement="top" [title]="category.categoryName">
+            <div class="card-body block-1 shadow-sm p-3 mb-5 rounded"
+              [ngClass]="{'bg-full': category.total > 0 && category.total <= 100, 'bg-not-full': category.total < 0 || category.total > 100}">
+              <b>{{category.categorySymbol}}</b>
+              <p *ngIf="category.total > 0 || filterEnabled" class="text-primary"><b>{{category.total}} %</b></p>
+            </div>
+          </div>
+
+          <div *ngFor="let item of category.elements" class="card pr-1 border-0">
+            <div class="card-body block-2 shadow-sm p-3 mb-5 bg-white rounded">
+              <p class="text-name">
+                {{item.elementName}}
+              </p>
+              <div class="col">
+                <div class="d-flex justify-content-center">
+                  <input (change)="inputChange(category, item)" [(ngModel)]="item.elementValue" maxlength="3"
+                    type="number" min="0" max="100" class="text-input form-control"
+                    [ngClass]="{'border border-danger': (item.error && item.error === true) || (filterEnabled === true && item.elementValue === null)}"><span
+                    class="p-1">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <hr>
+      </div>
+
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

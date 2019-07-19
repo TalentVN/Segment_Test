@@ -1,0 +1,95 @@
+[
+    {
+        "categoryName": "Application 1",
+        "categorySymbol": "App1",
+        "total": 0,
+        "elements": [
+            {
+                "elementName": "Segment 1",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 2",
+                "elementValue": null
+            }
+        ]
+    },
+    {
+        "categoryName": "Application 2",
+        "categorySymbol": "App2",
+        "total": 0,
+        "elements": [
+            {
+                "elementName": "Segment 1",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 2",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 3",
+                "elementValue": null
+            }
+        ]
+    },
+    {
+        "categoryName": "Application 3",
+        "categorySymbol": "App3",
+        "total": 0,
+        "elements": [
+            {
+                "elementName": "Segment 1",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 2",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 3",
+                "elementValue": null
+            }
+        ]
+    },
+    {
+        "categoryName": "Application 4",
+        "categorySymbol": "App4",
+        "total": 0,
+        "elements": [
+            {
+                "elementName": "Segment 1",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 2",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 3",
+                "elementValue": null
+            },
+            {
+                "elementName": "Segment 4",
+                "elementValue": null
+            }
+        ]
+    },
+    {
+        "categoryName": "Application 5",
+        "categorySymbol": "App5",
+        "total": 0,
+        "elements": [
+            {
+                "elementName": "Segment 1",
+                "elementValue": null
+            }
+        ]
+    },
+    {
+        "categoryName": "Application 6",
+        "categorySymbol": "App6",
+        "total": 0,
+        "elements": []
+    }
+]
