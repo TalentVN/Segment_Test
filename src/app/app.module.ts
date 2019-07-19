@@ -7,12 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelperComponent } from './helper/helper.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HelperComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +18,7 @@ import { HelperComponent } from './helper/helper.component';
     FormsModule,
     NgbModule
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: 'https://talentvn.github.io/Segment_Test/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

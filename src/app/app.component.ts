@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { Category } from './models/catetogy.model';
 import { Element } from './models/element.model';
@@ -16,8 +17,11 @@ export class AppComponent {
   fullAssigned = false;
   categories: any[];
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
     this.categories = mockData;
+  }
+  openHelp(content) {
+    this.modalService.open(content);
   }
 
   public inputChange(catetogy: Category, item: any) {

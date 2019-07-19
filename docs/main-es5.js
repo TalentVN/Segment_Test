@@ -7,18 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card shadow-sm mb-2 bg-white\">\n  <div class=\"card-body\">\n    <div class=\"alert alert-secondary alert-dismissible fade show\" role=\"alert\">\n      <strong>Application Segments</strong>\n      <img class=\"close\" src=\"assets/baseline-contact_support-24px.svg\">\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-4\">\n        <div class=\"float-left\">\n          <button type=\"button\" class=\"btn alert-secondary alert-none\">\n            <i class=\"fa fa-exclamation\" aria-hidden=\"true\"></i>\n            Please enter\n          </button>\n        </div>\n      </div>\n      <div class=\"col-4\">\n        <div class=\"float-none\">\n          <button type=\"button\" class=\"btn alert-none\"\n            [ngClass]=\"{'btn-warning': fullAssigned === false, 'btn-success': fullAssigned === true}\">\n            <i class=\"fa fa-exclamation icon-large\" aria-hidden=\"true\"></i>\n            <b>Warning</b> Pleaase assign 100%\n          </button>\n        </div>\n      </div>\n      <div class=\"col-4\">\n        <div class=\"float-right\">\n          <button (click)=\"filter()\" type=\"button\" class=\"btn btn-outline-primary btn-sm\">\n            <i class=\"fa fa-filter icon-large\" aria-hidden=\"true\"></i>\n            Filter\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!--The content below is only a placeholder and can be replaced.-->\n<div *ngIf=\"categories\" class=\"card pl-lg-5 border-0\">\n  <div class=\"card-body\">\n    <div class=\"row\">\n      <div *ngFor=\"let category of categories\" class=\"col-6\">\n        <div class=\"row\">\n\n          <div class=\"card border-0 pr-lg-4\" data-toggle=\"tooltip\" data-placement=\"top\" [title]=\"category.categoryName\">\n            <div class=\"card-body block-1 shadow-sm p-3 mb-5 rounded\"\n              [ngClass]=\"{'bg-full': category.total > 0 && category.total <= 100, 'bg-not-full': category.total < 0 || category.total > 100}\">\n              <b>{{category.categorySymbol}}</b>\n              <p *ngIf=\"category.total > 0 || filterEnabled\" class=\"text-primary\"><b>{{category.total}} %</b></p>\n            </div>\n          </div>\n\n          <div *ngFor=\"let item of category.elements\" class=\"card pr-1 border-0\">\n            <div class=\"card-body block-2 shadow-sm p-3 mb-5 bg-white rounded\">\n              <p class=\"text-name\">\n                {{item.elementName}}\n              </p>\n              <div class=\"col\">\n                <div class=\"d-flex justify-content-center\">\n                  <input (change)=\"inputChange(category, item)\" [(ngModel)]=\"item.elementValue\" maxlength=\"3\"\n                    type=\"number\" min=\"0\" max=\"100\" class=\"text-input form-control\"\n                    [ngClass]=\"{'border border-danger': (item.error && item.error === true) || (filterEnabled === true && item.elementValue === null)}\"><span\n                    class=\"p-1\">%</span>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n        <hr>\n      </div>\n\n      <hr>\n\n    </div>\n  </div>\n</div>\n\n\n<router-outlet></router-outlet>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/helper/helper.component.html":
-/*!************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/helper/helper.component.html ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  helper works!\n</p>\n"
+module.exports = "<div class=\"card shadow-sm mb-2 bg-white\">\n  <div class=\"card-body\">\n    <div class=\"alert alert-secondary alert-dismissible fade show\" role=\"alert\">\n      <strong>Application Segments</strong>\n      <img (click)=\"openHelp(content)\" class=\"btn close\" src=\"assets/baseline-contact_support-24px.svg\">\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-4\">\n        <div class=\"float-left\">\n          <button type=\"button\" class=\"btn alert-secondary alert-none\">\n            <i class=\"fa fa-exclamation\" aria-hidden=\"true\"></i>\n            Please enter\n          </button>\n        </div>\n      </div>\n      <div class=\"col-4\">\n        <div class=\"float-none\">\n          <button type=\"button\" class=\"btn alert-none\"\n            [ngClass]=\"{'btn-warning': fullAssigned === false, 'btn-success': fullAssigned === true}\">\n            <i class=\"fa fa-exclamation icon-large\" aria-hidden=\"true\"></i>\n            <b>Warning</b> Pleaase assign 100%\n          </button>\n        </div>\n      </div>\n      <div class=\"col-4\">\n        <div class=\"float-right\">\n          <button (click)=\"filter()\" type=\"button\" class=\"btn btn-outline-primary btn-sm\">\n            <i class=\"fa fa-filter icon-large\" aria-hidden=\"true\"></i>\n            Filter\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!--The content below is only a placeholder and can be replaced.-->\n<div *ngIf=\"categories\" class=\"card pl-lg-5 border-0\">\n  <div class=\"card-body\">\n    <div class=\"row\">\n      <div *ngFor=\"let category of categories\" class=\"col-6\">\n        <div class=\"row\">\n\n          <div class=\"card border-0 pr-lg-4\" data-toggle=\"tooltip\" data-placement=\"top\" [title]=\"category.categoryName\">\n            <div class=\"card-body block-1 shadow-sm p-3 mb-5 rounded\"\n              [ngClass]=\"{'bg-full': category.total > 0 && category.total <= 100, 'bg-not-full': category.total < 0 || category.total > 100}\">\n              <b>{{category.categorySymbol}}</b>\n              <p *ngIf=\"category.total > 0 || filterEnabled\" class=\"text-primary\"><b>{{category.total}} %</b></p>\n            </div>\n          </div>\n\n          <div *ngFor=\"let item of category.elements\" class=\"card pr-1 border-0\">\n            <div class=\"card-body block-2 shadow-sm p-3 mb-5 bg-white rounded\">\n              <p class=\"text-name\">\n                {{item.elementName}}\n              </p>\n              <div class=\"col\">\n                <div class=\"d-flex justify-content-center\">\n                  <input (change)=\"inputChange(category, item)\" [(ngModel)]=\"item.elementValue\" maxlength=\"3\"\n                    type=\"number\" min=\"0\" max=\"100\" class=\"text-input form-control\"\n                    [ngClass]=\"{'border border-danger': (item.error && item.error === true) || (filterEnabled === true && item.elementValue === null)}\"><span\n                    class=\"p-1\">%</span>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n        <hr>\n      </div>\n\n      <hr>\n\n    </div>\n  </div>\n</div>\n\n\n<router-outlet></router-outlet>\n\n<!-- Modal helper -->\n<ng-template #content let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\" id=\"modal-basic-title\">Helper Header</h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <form>\n      <div class=\"form-group\">\n        <label for=\"dateOfBirth\">Help Body</label>\n      </div>\n    </form>\n  </div>\n</ng-template>"
 
 /***/ }),
 
@@ -101,18 +90,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _assets_segments_data_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/segments_data.json */ "./src/assets/segments_data.json");
-var _assets_segments_data_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../assets/segments_data.json */ "./src/assets/segments_data.json", 1);
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _assets_segments_data_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/segments_data.json */ "./src/assets/segments_data.json");
+var _assets_segments_data_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../assets/segments_data.json */ "./src/assets/segments_data.json", 1);
+
 
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(modalService) {
+        this.modalService = modalService;
         this.title = 'segment';
         this.filterEnabled = false;
         this.fullAssigned = false;
-        this.categories = _assets_segments_data_json__WEBPACK_IMPORTED_MODULE_2__;
+        this.categories = _assets_segments_data_json__WEBPACK_IMPORTED_MODULE_3__;
     }
+    AppComponent.prototype.openHelp = function (content) {
+        this.modalService.open(content);
+    };
     AppComponent.prototype.inputChange = function (catetogy, item) {
         catetogy.total = 0;
         catetogy.elements.forEach(function (element) {
@@ -142,13 +137,16 @@ var AppComponent = /** @class */ (function () {
             }
         });
     };
+    AppComponent.ctorParameters = function () { return [
+        { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"] }
+    ]; };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -175,8 +173,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _helper_helper_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./helper/helper.component */ "./src/app/helper/helper.component.ts");
-
 
 
 
@@ -191,8 +187,7 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                _helper_helper_component__WEBPACK_IMPORTED_MODULE_8__["HelperComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -200,56 +195,11 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModule"]
             ],
-            providers: [{ provide: _angular_common__WEBPACK_IMPORTED_MODULE_4__["APP_BASE_HREF"], useValue: '/' }],
+            providers: [{ provide: _angular_common__WEBPACK_IMPORTED_MODULE_4__["APP_BASE_HREF"], useValue: 'https://talentvn.github.io/Segment_Test/' }],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/helper/helper.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/helper/helper.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hlbHBlci9oZWxwZXIuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/helper/helper.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/helper/helper.component.ts ***!
-  \********************************************/
-/*! exports provided: HelperComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HelperComponent", function() { return HelperComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var HelperComponent = /** @class */ (function () {
-    function HelperComponent() {
-    }
-    HelperComponent.prototype.ngOnInit = function () {
-    };
-    HelperComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-helper',
-            template: __webpack_require__(/*! raw-loader!./helper.component.html */ "./node_modules/raw-loader/index.js!./src/app/helper/helper.component.html"),
-            styles: [__webpack_require__(/*! ./helper.component.css */ "./src/app/helper/helper.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], HelperComponent);
-    return HelperComponent;
 }());
 
 

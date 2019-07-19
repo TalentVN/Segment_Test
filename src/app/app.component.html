@@ -2,7 +2,7 @@
   <div class="card-body">
     <div class="alert alert-secondary alert-dismissible fade show" role="alert">
       <strong>Application Segments</strong>
-      <img class="close" src="assets/baseline-contact_support-24px.svg">
+      <img (click)="openHelp(content)" class="btn close" src="assets/baseline-contact_support-24px.svg">
     </div>
 
     <div class="row">
@@ -78,3 +78,20 @@
 
 
 <router-outlet></router-outlet>
+
+<!-- Modal helper -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Helper Header</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Help Body</label>
+      </div>
+    </form>
+  </div>
+</ng-template>
